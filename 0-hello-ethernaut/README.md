@@ -4,11 +4,11 @@
 
 # Issue
 
-- This is just the intro and confirms you're setup
+- This is just the intro. It confirms you're setup and that you understand the basics of the game and interacting with a smart contract.
 
 # Solution
 
-```
-const password = (await contract.password())
-(await contract.authenticate(password))
-```
+1. Click "Get new instance"
+1. Read the password using `var password = await contract.password()`
+1. Then, submit the password to finish the level `await contract.authenticate(password)`
+1. Finally, click 'Submit Instance'

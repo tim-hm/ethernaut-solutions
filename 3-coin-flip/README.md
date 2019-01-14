@@ -1,17 +1,14 @@
 # Level3 - Coin Flip
 
-- [link to challenge](https://ethernaut.zeppelin.solutions/level/0xd340de695bbc39e72df800dfde78a20d2ed94035a)
+- [link to challenge](https://ethernaut.zeppelin.solutions/level/0xd340de695bbc39e72df800dfde78a20d2ed94035)
 
 # Issue
 
-`CoinFlip.flip(bool)` is deterministic, because there is no source of randomness (entropy) in the flips calculation. The next flip can be calculated by:
-
-`flip = Math.floor(prevBlockHash / FACTOR) == 1 ? true : false`
+CoinFlip calucaltes the flip deterministically. i.e., `flip = prevBlockHash / FACTOR`. Both variables are public, so anyone can calcualte the outcome. The only restrait is the calculation must keep track of which block is the current and previous block.
 
 # Solution
 
-`determinisitc-coin-flip.sol` calls the vulnerable `CoinFlip.flip(bool)` function with the calculated flip result.
-
-1. Deploy `deterministic-coin-flip.sol` (see `deploy.dflip.js` for how to do this)
-2. Execute `flipper.dFlip(contract.address, { from: web3.eth.accounts[0]}, console.info )` 10 times
-3. Submit instance
+1. Click "Get new instance"
+2. Deploy `HackFlip.sol` using `deploy.sh`
+3. Call `hackFlip.flip({ from: web3.eth.accounts[0] }, (e, r) => console.info(r)))` ten times using **`flip**-ten-times.js` as a guide
+4. Finally, click 'Submit Instance'
