@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "ts-node -r dotenv/config hack.ts"
+    "start": "ts-node -r dotenv/config src/hack.ts"
   },
   "dependencies": {
     "@types/node": "^10.12.18",
